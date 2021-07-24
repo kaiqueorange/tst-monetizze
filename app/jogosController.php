@@ -74,11 +74,13 @@ class jogosController{
     }
 
     public function sortear(){
-        for($i = 0; $i < 6; $i++){
+        $i = 0; 
+        while($i < 6){
             $rand = mt_rand(1, 60);  // sorteia um número entre 1 até 60
             if(!in_array($rand, $this->resultado))  // SE os 6 números da mega sena NÃO FOREM IGUAIS ENTÃO
             {
                 $this->resultado[$i] = $rand;
+                $i++;
             }
         }
         return sort($this->resultado);
